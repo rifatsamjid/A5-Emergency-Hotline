@@ -40,7 +40,7 @@ callButton.forEach((button) => {
             class="flex justify-between items-center bg-gray-100 p-5 rounded-xl mb-2"
           >
             <div>
-              <h2 class="font-semibold">${subtitle}</h2>
+              <h2 class="font-semibold inter-font">${subtitle}</h2>
               <p>${number}</p>
             </div>
             <p>${timeString}</p>
