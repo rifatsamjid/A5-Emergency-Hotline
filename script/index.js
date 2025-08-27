@@ -74,7 +74,7 @@ copyButton.forEach(function (button) {
     const card = this.closest(".card");
     const number = card.querySelector(".number").innerText;
     navigator.clipboard.writeText(number);
-    alert("Number copied" + number);
+    alert("Number copied " + number);
     copyCount++;
     copyElement.innerText = copyCount;
     copiedNumbers.push(number);

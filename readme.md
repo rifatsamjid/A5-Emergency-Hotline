@@ -1,165 +1,145 @@
-## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT-005
-
-### 📅 Deadline For 60 marks: 29th August, 2025 (11:59 pm ⏱️)
-
-### 📅 No Deadline For 50 marks
-
-### 📅 Deadline For 30 marks: Any time after 29th August.
-
----
-
-## ✅ Main Requirements (50 Marks)
-
-### 1. Navbar
-
-- **Website name & logo** on the left as Figma
-- **Heart icon, coin count (default-100), and Copy Count** on the right as Figma
-
----
-
-### 2. Hero Section
-
-- **Background Gradient** in the Whole Section
-- **A Relevant Logo** at the top-center
-- **Section Title** in the center
-- **A Relevant Slogan** in the bottom Center
-
----
-
-### 2. Main Section
-
-This Section will have layout as figma
-
-<table border=1 width="100%" cellpadding="50">
-<tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
- </tr>
- <tr>
-    <td colspan=9 >Card Section</td>
-    <td colspan=3>History Section</td>
- </tr>
-</table>
-
-### Emergency Hotline Section
-
-- **Show Minimum 6 cards**. Each card will contain:
-  - Icon or Image
-  - Relevant Name
-  - Relevant Name in English
-  - Hotline number for calling
-  - Category Badge
-  - 💗 icon at left
-  - **2 buttons** at the bottom: Copy and Call with icons as Figma
-
-### History Section
-
-- **A white Background** in the whole section
-- **History Title with icon** at the top-left as Figma
-- **Clear History Button** at the top-right as Figma
-
----
-
-### 3. Responsiveness (5 Marks)
-
-- Website should be fully **responsive for mobile devices** (implementation up to you)
-
----
-
-## Functionalities
-
-### 4. Heart Icons
-
-- Clicking on the 💗 **heart icon** of any card will increase the count in the Navbar
-
----
-
-### 5. Call Buttons
-
-- On clicking a card's **Call Button**, following actions will happen:
-  - Show an **alert** with a message including the service name and number
-  - Each call will **cut 20 coins**. Reduce Coin after each click.
-  - If coins are less than 20, show a relevant alert and terminate the process.
-  - Add this service into the **Call History section** with:
-    - Service name
-    - Service number
-
----
-
-### 5. Call History Section
-
-- Show all called services with name & number. This will empty initially. when call button clicked it will filled dynamically.
-- A **Clear History button** on the right
-- Clicking this button will remove all data from call history
-
----
-
 ## Create Readme
 
 You have to create a `Readme.md` file. and write down following questions. Dont Try to copy paste from AI Tools. Just write what you know about these. If you don't know , then search , learn , understand and then write.
 
-### 6. Answer the following questions clearly:
+### 1. Answer the following questions clearly:
 
 1. What is the difference between **getElementById, getElementsByClassName, and querySelector / querySelectorAll**?
+   answer :
+   \*\*getElementById
+
+purpose:
+\*Get a Dom element by its id attribute.
+
+How it works:
+returns a single element Whose ID matches the given string.
+
+Key Difference:
+\*The id must be unique the DOM.
+
+- Cannot return multiple element.
+
+\*\*getElementsByClassName
+
+purpose:
+
+- Gets all DOM elements that have a specific class.
+
+How it works:
+
+- Returns an HTML collection, Which is array like but not actually array.
+- Can select multiple element.
+
+Key Difference:
+
+- Live collection update automatically if the DOM changes.
+- Cannot directly use .forEach() (need array.form() first).
+
+\*\*querySelector / querySelectorAll
+
+purpose:
+
+- Use CSS selector to find elements in DOM.
+
+How it works:
+
+- querySelector returns the first matching elements.
+- querySelector all returns matching element as a NodeList.
+
+Key Difference:
+
+- Very flexible you can use ID,class,tag,attribute selectors, or any CSS selector.
+- nodeList allow .forEach() directly.
+- querySelectorAll is Static, meaning it does not auto-update if DOM changes.
+
 2. How do you **create and insert a new element into the DOM**?
+
+\*\*answer :
+To create and insert a new element into the DOM,generally follow three main steps:
+
+1.create element
+const div = document.createElement("div");
+
+2.set it content or attributes
+div.innerText = "Hello world";
+div.className = "my-class";
+div.setAttribute("id", "myDiv");
+
+3.insert into the DOM
+
+const parent = document.getElementById("container");
+parent.appendChild(div);
+
 3. What is **Event Bubbling** and how does it work?
+
+\*\*answer :
+
+Definition:
+Event Bubbling is a way that events propagate through the DOM
+
+- when an event happens on an element,it first triggers on that element , then bubbles up to its parent , then the parent's and so on, all the way to the document object.
+
+How it works:
+1.You click on a child element
+2.The click event fires on the button first.
+3.Then it moves to the button's parent div.
+4.Then to the grandparent element , and finally up to document.
+
 4. What is **Event Delegation** in JavaScript? Why is it useful?
+
+\*\*answer :
+
+Definition:
+Event delegation is a technique where you attach a single event listener to parent element instead of adding individual listeners to each child element
+
+- The parent handles events triggered by its children by checking the event target.
+
+How it Works:
+1.Attach a listener to a common parent of multiple child elements.
+2.When a child element triggers the event , the event bubbles up to the parent.
+3.Inside the parent's listener , use event.target to check which child triggered the event.
+4.Perform actions based on the target element
+
 5. What is the difference between **preventDefault() and stopPropagation()** methods?
 
----
+Here's a clear explanation of the difference between preventDefault() and stopPropagation() in javaScript
 
-## 🧪 Challenges Part (10 Marks)
+1.preventDefault()
+*purpose:Stop the default action of an element from happening.
+*id dose not stop the event from bubbling ;the event still propagates through the DOM.
 
-- On clicking the **Copy button**, show an alert and **increase the copy count** (3 Marks)
+- prevent a link from navigation
+  document.querySelector("a").addEventListener("click",function(event){
+  event.preventDefault();
+  })
+  \*prevent a form from submitting;
+  document.querySelector("a").addEventListener("submit",function(event){
+  event.preventDefault();
+  })
 
-- Hotline number will be **copied on click** so it can be pasted anywhere (4 Marks)
+over all summary;
 
-💡Hint: You can ask for Help from `ChatGPT` Mamma . Just copy the below prompt , generate answer. use it with your own way.
+- Stops browser's default behavior.
+  \*Event still bubbles unless you also call stopPropagation().
 
-```bash
-I have a card with some text and a button inside it. I want that when a user clicks the button, some specific text from the card is copied to the clipboard using JavaScript. Please provide the code and explain it step by step.
-```
+  2.stopPropagation()
 
-- After clicking on the **Call button**, the **exact time of the call** will be shown in the Call History section (3 Marks)
+*Purpose:stop the event from bubbling up the DOM tree.
+*it dose not stop the default action of the element.
 
-💡Hint: Search Google with that below question
+example:
 
-```bash
-How to get current local time in js
-```
+document.getElementById("child").addEventListener("click", function (event){
+event.stopPropagation();
+alert("child clicked , parent won't know!")
+})
+document.getElementById("parent").addEventListener("click", function (event){
+alert("parent clicked!")
 
----
+})
 
-## ⚙️ Technology Stack
-
-- HTML
-- CSS ( Vanilla , Tailwind CSS , DaisyUI , Others - wheatever you like )
-- JavaScript ( Vanilla only. No Framework / Library Allowed )
-
----
-
-## 📌 Rules
-
-- ✅ Minimum **5 meaningful commits** required
-- ❌ No Lorem Ipsum or dummy placeholder text. Use **relevant content only**
-
----
-
-## 🔗 What to Submit
-
-- 📂 **GitHub Repository**
-- 🌐 **Live Link**
+over all summary;
+*stop event propagation.
+*default browser action still happens unless preventDefault() is also called.
 
 ---
-
-# Let's Code and Achieve your Dream 🎯
